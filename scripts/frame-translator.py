@@ -1,6 +1,6 @@
 import cv2
 import os
-#path = "datasets/anthony-6-6-15_9.avi"
+#path = "../datasets/anthony-6-6-15_9.avi"
 
 underscore = '_'
 extension = '.jpg'

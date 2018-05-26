@@ -20,8 +20,8 @@ def draw_flow(im,flow,step=16):
     return vis
 
 
-face_classifier = cv2.CascadeClassifier('haarcascades/haarcascade_frontalface_default.xml')
-#face_classifier = cv2.CascadeClassifier('haarcascades/haarcascade_eye_tree_eyeglasses.xml')
+face_classifier = cv2.CascadeClassifier('../haarcascades/haarcascade_frontalface_default.xml')
+#face_classifier = cv2.CascadeClassifier('../haarcascades/haarcascade_eye_tree_eyeglasses.xml')
 cap = cv2.VideoCapture(0)
 
 x = 0
@@ -56,7 +56,7 @@ i = 0
 
 # Open VideoWriter
 fourcc = cv2.VideoWriter_fourcc(*'XVID')
-out = cv2.VideoWriter('datasets/test.avi',fourcc, 20.0, (640,480))
+out = cv2.VideoWriter('../datasets/test.avi',fourcc, 20.0, (640,480))
 
 if (not out.isOpened()):
     print "Video writer error"

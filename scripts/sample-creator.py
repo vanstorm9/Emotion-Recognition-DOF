@@ -5,7 +5,7 @@ import math
 import cv2
 import imutils
 
-face_classifier = cv2.CascadeClassifier('haarcascades/haarcascade_frontalface_default.xml')
+face_classifier = cv2.CascadeClassifier('../haarcascades/haarcascade_frontalface_default.xml')
 cap = cv2.VideoCapture(0)
 
 slash = '/'

@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 t0 = time()
 t1 = time()
 print 'Loading the main matrix. . .'
-main = np.load('optical-main-mini.npy')
+main = np.load('../optical-main-mini.npy')
 diff = diff = time() - t1
 print 'Loaded main matrix in ', diff, 's of size ', main.shape
 
@@ -42,33 +42,10 @@ while True:
         master = np.concatenate((master, idx_main))
     
     
-    '''
-    j = 0
-    for idx_idx in idx_main:
-
-        if j == 0:
-            master = np.array([idx_idx , 0 , main[mas,idx_idx]])[None,:]
-            
-            #master = master[None,:]
-        else:
-            sub_master = np.array([idx_idx , 0 , main[mas, idx_idx]])[None,:]
-            master = np.concatenate((master, sub_master))
-
-        master = master[master[:,2].argsort()]
-        
-            
-        j = j + 1
-    print 'Done'
-    '''
-    
 
     #print 'Printing out results'
     i = 1
-    '''
-    for idx in idx_main:
-        print i, ': ', idx ,' ', main[mas,idx]
-        i = i + 1
-    '''
+    
     j = j + 1
     mas = mas + 1
 

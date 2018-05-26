@@ -35,7 +35,7 @@ while True:
 
     if choice == 'd':
         # Insert some stuff
-        folder_trans = np.array(['datasets/Smiling-Motion','datasets/Surprised-Motion'])
+        folder_trans = np.array(['../datasets/Smiling-Motion','datasets/Surprised-Motion'])
         label_trans = np.array(['Smiling','Shocked'])
         first_vid = 'anthony-6-6-15_0.avi'
         break
@@ -62,7 +62,7 @@ while True:
         break
 
 # Detect the first frame of video
-face_classifier = cv2.CascadeClassifier('haarcascades/haarcascade_frontalface_default.xml')
+face_classifier = cv2.CascadeClassifier('../haarcascades/haarcascade_frontalface_default.xml')
 
 # First frame of first video only
 if choice == 'd':

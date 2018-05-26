@@ -70,7 +70,7 @@ label_trans = np.array([])
 folder = ''
 choice = ''
 
-face_classifier = cv2.CascadeClassifier('haarcascades/haarcascade_frontalface_default.xml')
+face_classifier = cv2.CascadeClassifier('../haarcascades/haarcascade_frontalface_default.xml')
 
 print 'Load datasets [l] from file or create a new one [n]'
 loading = raw_input()
@@ -81,21 +81,21 @@ if loading=='l':
     t0 = time()
     t1 = time()
     print 'Loading the main matrix. . .'
-    main = np.load('datasets/optical-main.npy')
+    main = np.load('../datasets/optical-main.npy')
     diff = diff = time() - t1
     print 'Loaded main matrix in ', diff, 's of size ', main.shape
     
     t2 = time()
 
     print 'Loading the target vector. . .'
-    target = np.load('datasets/optical-target.npy')
+    target = np.load('../datasets/optical-target.npy')
     diff = time() - t2
     print 'Loaded target in ', diff, 's of size ', target.shape
 
     # Getting coordinates of haar box
     print 'Getting the x, y, w, h values for Haar. . .'
     
-    folder = 'datasets/Smile-short'
+    folder = '../datasets/Smile-short'
     first_vid = 'anthony-6-8-15_0.avi'
     capf = cv2.VideoCapture(folder + slash + first_vid)
     print 'Capf: ',capf.isOpened()
@@ -111,11 +111,11 @@ else:
             type_of = raw_input()
 
             if type_of == 'e':
-                folder_trans = np.array(['datasets/Smile-short','datasets/Shock-short'])
+                folder_trans = np.array(['../datasets/Smile-short','../datasets/Shock-short'])
                 label_trans = np.array(['Smiling','Shocked'])
                 first_vid = 'anthony-6-8-15_0.avi'
             else:
-                folder_trans = np.array(['datasets/Nodding','datasets/Shaking'])
+                folder_trans = np.array(['../datasets/Nodding','../datasets/Shaking'])
                 label_trans = np.array(['Yes (nodding head)','No (shaking head)'])
                 first_vid = 'anthony-6-8-15_0.avi'
             #folder_trans = np.array(['datasets/Smiling-Motion','datasets/Surprised-Motion'])
@@ -146,7 +146,7 @@ else:
             break
 
     # Detect the first frame of video
-    face_classifier = cv2.CascadeClassifier('haarcascades/haarcascade_frontalface_default.xml')
+    face_classifier = cv2.CascadeClassifier('../haarcascades/haarcascade_frontalface_default.xml')
 
     # First frame of first video only
     if choice == 'd':
